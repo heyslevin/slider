@@ -1,0 +1,29 @@
+{
+  "name": "slider",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack && live-server ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyslevin/slider.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyslevin/slider/issues"
+  },
+  "homepage": "https://github.com/heyslevin/slider#readme",
+  "description": "",
+  "devDependencies": {
+    "prettier": "2.1.1",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6"
+  }
+}

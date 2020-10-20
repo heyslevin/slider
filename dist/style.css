@@ -32,6 +32,23 @@ h1 {
 	background: gray;
 }
 
+.sliderImage {
+	height: 600px;
+	width: 1200px;
+	background: red;
+
+	overflow: hidden;
+}
+
+.sliderImage img {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.sl .sliderSet {
+	overflow: hidden;
+}
+
 .arrow {
 	position: absolute;
 	padding: 50px;
