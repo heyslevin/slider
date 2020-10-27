@@ -59,6 +59,8 @@ h1 {
 	width: 4800px;
 	height: 600px;
 	position: absolute;
+
+	transition: all 1s ease;
 }
 
 .arrow {

@@ -20,7 +20,7 @@
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar dom = function () {\n\tvar _slidePosition = 0;\n\n\tvar currentSlide = () => {\n\t\treturn _slidePosition;\n\t};\n\n\tvar rightArrow = function (slideArray) {\n\t\tif (_slidePosition === slideArray.length) {\n\t\t\talert(\"end of slide\");\n\t\t} else {\n\t\t\t_slidePosition += 1;\n\t\t\talert(_slidePosition);\n\t\t}\n\t};\n\n\treturn {\n\t\tcurrentSlide,\n\t\trightArrow,\n\t};\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n\n//# sourceURL=webpack://slider/./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar dom = function () {\n\t//Global Count Variable\n\tvar _slidePosition = 1;\n\n\t//Selectors\n\tvar slides = document.querySelectorAll(\".sliderImage\");\n\tvar slideArray = [...slides];\n\tvar rightArrow = document.querySelector(\".arrowRight\");\n\n\tvar sliderSet = document.querySelector(\".sliderSet\");\n\n\t//Event\n\t//Arrow Action\n\trightArrow.addEventListener(\"click\", function () {\n\t\tmoveRight(slideArray);\n\t});\n\n\tvar currentSlide = () => {\n\t\treturn _slidePosition;\n\t};\n\n\tvar moveRight = function (slideArray) {\n\t\tif (_slidePosition === slideArray.length) {\n\t\t\talert(\"end of slide\");\n\t\t} else {\n\t\t\tlet movement = _slidePosition * 1200;\n\t\t\tsliderSet.style.transform = `translateX(-${movement}px)`;\n\t\t\t_slidePosition += 1;\n\t\t}\n\t};\n\n\treturn {\n\t\tcurrentSlide,\n\t\trightArrow,\n\t};\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n\n//# sourceURL=webpack://slider/./src/dom.js?");
 
 /***/ }),
 
@@ -33,7 +33,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom.js */ \"./src/dom.js\");\n\n\n\n\n//Selectors\nvar slides = document.querySelectorAll(\".sliderImage\");\nvar slideArray = [...slides];\nvar rightArrow = document.querySelector(\".arrowRight\");\n\n//Module Start\n\nconst dom = (0,_dom_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n\nfunction works() {\n\talert(\"works\");\n}\n\n//Arrow Action\nrightArrow.addEventListener(\"click\", function () {\n\tdom.rightArrow(slideArray);\n});\n\n\n//# sourceURL=webpack://slider/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom.js */ \"./src/dom.js\");\n\n\n\n\n//Module Start\n\nconst dom = (0,_dom_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n\n//# sourceURL=webpack://slider/./src/index.js?");
 
 /***/ })
 
