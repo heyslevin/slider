@@ -59,16 +59,12 @@ h1 {
 	width: 4800px;
 	height: 600px;
 	position: absolute;
+
+	transition: all 1s ease;
 }
 
 .arrow {
-	position: absolute;
-	padding: 50px;
-
-	height: 70px;
-	width: auto;
-
-	z-index: 1;
+	height: 100px;
 }
 
 .right {
@@ -107,4 +103,15 @@ h1 {
 
 .bubbleFill {
 	background-color: black;
+}
+
+.arrowContainer {
+	position: absolute;
+	padding: 50px;
+
+	width: auto;
+
+	z-index: 1;
+
+	background: blue;
 }
