@@ -45,9 +45,22 @@ var dom = function () {
 		}
 	};
 
+	//Bubble Zone
+
+	//Selectors
+	var bubbleArea = document.querySelector(".bubbles");
+	var bubble = `<div class="bubble"></div>`;
+
+	var bubbleGenerator = function () {
+		for (let i = 0; i < slideArray.length; i++) {
+			bubbleArea.innerHTML += bubble;
+		}
+	};
+
 	return {
 		currentSlide,
 		rightArrow,
+		bubbleGenerator,
 	};
 };
 
