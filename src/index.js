@@ -5,3 +5,4 @@ import Dom from "./dom.js";
 //Module Start
 
 const dom = Dom();
+dom.bubbleGenerator();
