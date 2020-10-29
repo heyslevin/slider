@@ -50,11 +50,31 @@ var dom = function () {
 	//Selectors
 	var bubbleArea = document.querySelector(".bubbles");
 	var bubble = `<div class="bubble"></div>`;
+	var bubbleArray = [];
+
+	var bubbleSelect = function (bubble) {
+		let bubbleIndex = bubbleArray.indexOf(bubble) + 1;
+		let distance = bubbleIndex - _slidePosition;
+		let moveDistance = distance * 1200;
+
+		_slidePosition += distance;
+		_movement += moveDistance;
+
+		sliderSet.style.transform = `translateX(-${_movement}px)`;
+	};
 
 	var bubbleGenerator = function () {
 		for (let i = 0; i < slideArray.length; i++) {
 			bubbleArea.innerHTML += bubble;
 		}
+
+		let bubbles = document.querySelectorAll(".bubble");
+		bubbleArray = [...bubbles];
+		bubbleArray.forEach((bubble) => {
+			bubble.addEventListener("click", function () {
+				bubbleSelect(bubble);
+			});
+		});
 	};
 
 	return {
