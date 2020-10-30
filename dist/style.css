@@ -19,6 +19,10 @@ h1 {
 	justify-content: center;
 }
 
+.selected {
+	background: black !important;
+}
+
 .sliderContainer {
 	display: flex;
 	flex-wrap: wrap;
@@ -99,6 +103,8 @@ h1 {
 	border: 1px solid black;
 
 	margin: 5px;
+
+	transition: all 0.5s ease;
 }
 
 .bubbleFill {
