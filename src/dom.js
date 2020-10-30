@@ -61,6 +61,18 @@ var dom = function () {
 		_movement += moveDistance;
 
 		sliderSet.style.transform = `translateX(-${_movement}px)`;
+
+		currentBubble();
+	};
+
+	var currentBubble = function () {
+		bubbleArray.forEach((bubble) => {
+			if (bubbleArray.indexOf(bubble) === _slidePosition - 1) {
+				bubble.classList.toggle("selected");
+			} else {
+				bubble.classList.remove("selected");
+			}
+		});
 	};
 
 	var bubbleGenerator = function () {
@@ -74,6 +86,8 @@ var dom = function () {
 			bubble.addEventListener("click", function () {
 				bubbleSelect(bubble);
 			});
+
+			currentBubble(bubble);
 		});
 	};
 
