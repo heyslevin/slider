@@ -24,26 +24,66 @@ var dom = function () {
 		return _slidePosition;
 	};
 
+	var slideOne = function () {
+		sliderSet.style.transform = `translateX(0px)`;
+		_slidePosition = 1;
+		_movement = 0;
+	};
+
+	var slideLast = function () {
+		_movement = 1200 * (slideArray.length - 1);
+
+		sliderSet.style.transform = `translateX(-${_movement}px)`;
+		_slidePosition = slideArray.length;
+	};
+
 	var moveRight = function (slideArray) {
 		if (_slidePosition === slideArray.length) {
-			alert("end of slide");
+			clearTimeout(timeOut);
+			slideOne();
+			currentBubble();
+			timeFunc();
 		} else {
+			clearTimeout(timeOut);
+
 			_movement += 1200;
 			sliderSet.style.transform = `translateX(-${_movement}px)`;
 			_slidePosition += 1;
+
+			currentBubble();
+			timeFunc();
 		}
 	};
 
 	var moveLeft = function (slideArray) {
 		if (_slidePosition === 1) {
-			alert("end of slide");
+			clearTimeout(timeOut);
+			slideLast();
+			currentBubble();
+			timeFunc();
 		} else {
-			//Fix math on move left
+			clearTimeout(timeOut);
+
 			_movement -= 1200;
 			sliderSet.style.transform = `translateX(-${_movement}px)`;
 			_slidePosition -= 1;
+
+			currentBubble();
+			timeFunc();
 		}
 	};
+
+	//Set timeout
+
+	var timeOut;
+
+	var timeFunc = function () {
+		timeOut = setTimeout(function () {
+			moveRight(slideArray);
+		}, 2000);
+	};
+
+	timeFunc();
 
 	//Bubble Zone
 
